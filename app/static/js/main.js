@@ -19,7 +19,9 @@ function change(da){
     if (da=="recommand"){
         title="智能人机协作";
           $("#portlet").find(".modal-footer").html('<button type="button" class="btn blue" onclick="recommandtion()">Run</button><button type="button" class="btn default" data-dismiss="modal" >Close</button>');
-
+   }else if(da=="opennotice"){
+        title="获知访客APP版本信息";
+          $("#portlet").find(".modal-footer").html('<button type="button" class="btn blue" onclick="opennotices()">Run</button>  <button type="button" class="btn default" data-dismiss="modal" >Close</button>'); 
     }else if(da=="sentiment"){
         title="智能质检";
           $("#portlet").find(".modal-footer").html('<button type="button" class="btn blue" onclick="sentiments()">Run</button>  <button type="button" class="btn default" data-dismiss="modal" >Close</button>');
@@ -135,6 +137,34 @@ action="";
         });
 
 }
+
+function opennotices(){
+tenantid = $("#recom").val();
+total = $("#td").val();
+if (tenantid=="" && total==""){
+    alert("tenantid不能为空");
+    return false;
+}
+ if($("#radio53").attr("checked")=="checked"){
+action='true';
+}else{
+action="";
+}
+    $(".recommand").html("<img src='/static/images/ajax_loader3.gif'>");
+    $.post($SCRIPT_ROOT + '/opennotice', {
+            total: $("#td").val(),
+            tenantids: tenantid,
+            enable: action,
+            now: new Date().getTime()
+        },
+        function(data) {
+            $(".recommand").html('<div class="well well-lg" id="recommand_result" style="display: none;"></div>')
+            $("#recommand_result").show(500);
+            $("#recommand_result").html('<p style="line-height:30px">'+data.result+'</p>');
+        });
+
+}
+
 
 function growingios(){
 tenantid = $("#recom").val();

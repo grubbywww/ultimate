@@ -338,6 +338,43 @@ def agentcall():
     results = RunYaml()
     return jsonify(result = results)
 
+@app.route("/opennotice",methods = ['POST'])
+def opennotice():
+    tenantids = request.values.get('tenantids')
+    url = request.values.get('url')
+    total = request.values.get('total')
+
+    if total.strip() == "":
+        totalids = []
+    else:
+        totalid =  re.split("[,|\s+]",total)
+        totalids = [int(i) for i in totalid]
+    enable = request.values.get('enable')
+    if enable == "":
+        tag = ""
+    else:
+        tag = True
+    if tenantids.strip() == "":
+        tenantid = []
+    else:
+        td = re.split("[,|\s+]",tenantids)
+        tenantid = [int(i) for i in td]
+
+    dataMap = {
+    "tenantids":list(totalids),
+    "functions":{
+    "sessionopennotice":{
+    "enable":bool(tag),
+    "tenantids":list(tenantid),
+    "url": str(url),
+    }
+    }
+    }
+    WriteYaml(dataMap)
+    results = RunYaml()
+    return jsonify(result = results)
+
+
 @app.route("/kefuorg",methods = ['POST'])
 def kefuorg():
     tenantids = request.values.get('tenantids')
@@ -585,6 +622,11 @@ def all():
     "autoappendremindflag":bool(autoappendremindflagtag)
     },
     "agentcallvisitor":{
+    "enable":bool(tag),
+    "tenantids":list(tenantid),
+    "url": str(url),
+    },
+    "sessionopennotice":{
     "enable":bool(tag),
     "tenantids":list(tenantid),
     "url": str(url),
