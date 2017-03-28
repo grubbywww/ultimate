@@ -1,0 +1,12 @@
+---
+option:
+  port: 3299
+  ssh_remote_user: 'easemob'
+  key_path: '/home/easemob/.ssh/id_rsa.monitor'
+task:
+- name: Copy Yaml
+  copy:
+    src: /data/htdocs/ultimate/tmp.yaml
+    dest: /data/zhaoyufeng/kefuextensions/config/tmp.yaml
+- name: Run Python
+  shell: /usr/local/bin/python /data/zhaoyufeng/kefuextensions/kfultimate.py /data/zhaoyufeng/kefuextensions/config/tmp.yaml 2>&1 > /dev/stdout

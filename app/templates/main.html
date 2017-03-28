@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8"/>
+<title>{{title}}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+<link href="/static/v4.1.0/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/v4.1.0/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/v4.1.0/theme/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/v4.1.0/theme/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="/static/v4.1.0/theme/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN THEME STYLES -->
+<!-- DOC: To use 'rounded corners' style just load 'components-rounded.css' stylesheet instead of 'components.css' in the below style tag -->
+<link href="/static/v4.1.0/theme/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="/static/v4.1.0/theme/assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="/static/v4.1.0/theme/assets/admin/layout6/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="/static/v4.1.0/theme/assets/admin/layout6/css/custom.css" rel="stylesheet" type="text/css"/>
+<!-- END THEME STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="page-quick-sidebar-over-content">
+
+<div class="modal fade bs-example-modal-lg" id="portlet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+
+                                          <h4> </h4>
+                        </div>
+                        <div class="modal-body">
+                                <div class="portlet light ">
+
+                                    <div class="portlet-body form">
+                                        <!-- BEGIN FORM-->
+                                        <form action="#" class="form-horizontal">
+                                            <div class="form-body">
+   <div class="form-group">
+                <label class="control-label col-md-2">Tenantid</label>
+                 <div class="col-md-10" >
+
+      <input class="form-control input-circle" type="text"  id="recom">
+
+  </div>
+  </div>
+
+ <div class="form-group" style="margin-top: 30px">
+  <label class="control-label col-md-2">开启/关闭</label>
+  <div class="col-md-10">
+                      <div class="md-radio-inline">
+                      <div class="md-radio has-error">
+                          <input type="radio" id="radio53" name="radio2" class="md-radiobtn" checked>
+                          <label for="radio53">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启服务 </label>
+                        </div>
+                        <div class="md-radio">
+                          <input type="radio" id="radio54" name="radio2" class="md-radiobtn">
+                          <label for="radio54">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭服务 </label>
+                        </div>
+</div>
+</div>
+</div>
+ <div class="form-group">
+   <div class="col-md-12 recommand">
+<div class="well well-lg" id="recommand_result" style="display: none;"></div>
+</div>
+ </div>
+                                            </div>
+                                        </form>
+                                        <!-- END FORM-->
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+
+
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+
+<div class="modal fade bs-example-modal-lg" id="all" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+
+                                          <h4>旗舰版开通</h4>
+                        </div>
+                        <div class="modal-body">
+                                <div class="portlet light ">
+
+                                    <div class="portlet-body form">
+                                        <!-- BEGIN FORM-->
+                                        <form action="#" class="form-horizontal">
+                                            <div class="form-body">
+   <div class="form-group">
+                <label class="control-label col-md-2">Tenantid</label>
+                 <div class="col-md-10" >
+
+      <input class="form-control input-circle" type="text"  id="allid">
+
+  </div>
+  </div>
+   <div class="form-group">
+                <label class="control-label col-md-2">IP</label>
+                 <div class="col-md-10" >
+
+      <input class="form-control input-circle" type="text"  id="allurl" placeholder="座席呼叫客户地址">
+
+  </div>
+  </div>
+  <div class="form-group">
+                <label class="control-label col-md-2">Keywords</label>
+                 <div class="col-md-10" >
+
+     <input class="form-control input-circle kw" type="text"  placeholder="Sample: 我了个去,银行卡,一个亿">
+
+
+  </div>
+  </div>
+
+     <div class="form-group">
+                <label class="control-label col-md-2">Remindcontent</label>
+                 <div class="col-md-10" >
+
+     <input class="form-control input-circle rc" type="text"   placeholder="Sample: CSM提示：\n1）敏感词，为了保障您的权益，请文明用语.">
+
+
+  </div>
+  </div>
+ <div class="form-group" style="margin-top: 30px">
+  <label class="control-label col-md-2">Boublewordsflag</label>
+  <div class="col-md-10">
+                        <div class="md-radio-inline">
+                      <div class="md-radio has-success">
+                          <input type="radio" id="double3" name="double1" class="md-radiobtn" checked>
+                          <label for="double3">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启 </label>
+                        </div>
+                        <div class="md-radio has-warning">
+                          <input type="radio" id="double4" name="double1" class="md-radiobtn">
+                          <label for="double4">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭 </label>
+                        </div>
+</div>
+</div>
+</div>
+
+ <div class="form-group">
+  <label class="control-label col-md-2">Generalwordsflag</label>
+  <div class="col-md-10">
+                        <div class="md-radio-inline">
+                      <div class="md-radio has-success">
+                          <input type="radio" id="genera3" name="genera1" class="md-radiobtn" checked>
+                          <label for="genera3">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启 </label>
+                        </div>
+                        <div class="md-radio has-warning">
+                          <input type="radio" id="genera4" name="genera1" class="md-radiobtn">
+                          <label for="genera4">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭 </label>
+                        </div>
+</div>
+</div>
+</div>
+
+
+ <div class="form-group">
+  <label class="control-label col-md-2">Advancedfilterflag</label>
+  <div class="col-md-10">
+                        <div class="md-radio-inline">
+                      <div class="md-radio has-success">
+                          <input type="radio" id="advanced3" name="advanced1" class="md-radiobtn" checked>
+                          <label for="advanced3">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启 </label>
+                        </div>
+                        <div class="md-radio has-warning">
+                          <input type="radio" id="advanced4" name="advanced1" class="md-radiobtn">
+                          <label for="advanced4">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭 </label>
+                        </div>
+</div>
+</div>
+</div>
+
+
+ <div class="form-group">
+  <label class="control-label col-md-2">Wildcardreplaceflag</label>
+  <div class="col-md-10">
+                        <div class="md-radio-inline">
+                      <div class="md-radio has-success">
+                          <input type="radio" id="wildcard3" name="wildcard1" class="md-radiobtn">
+                          <label for="wildcard3">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启 </label>
+                        </div>
+                        <div class="md-radio has-warning">
+                          <input type="radio" id="wildcard4" name="wildcard1" class="md-radiobtn" checked>
+                          <label for="wildcard4">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭 </label>
+                        </div>
+</div>
+</div>
+</div>
+
+ <div class="form-group">
+  <label class="control-label col-md-2">Autoappendremind</label>
+  <div class="col-md-10">
+                        <div class="md-radio-inline">
+                      <div class="md-radio has-success">
+                          <input type="radio" id="auto3" name="auto1" class="md-radiobtn" checked>
+                          <label for="auto3">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启 </label>
+                        </div>
+                        <div class="md-radio has-warning">
+                          <input type="radio" id="auto4" name="auto1" class="md-radiobtn">
+                          <label for="auto4">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭 </label>
+                        </div>
+</div>
+</div>
+</div>
+
+ <div class="form-group">
+  <label class="control-label col-md-2">Keywordscanflag</label>
+  <div class="col-md-10">
+                        <div class="md-radio-inline">
+                      <div class="md-radio has-success">
+                          <input type="radio" id="keyword3" name="keyword1" class="md-radiobtn" checked>
+                          <label for="keyword3">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启 </label>
+                        </div>
+                        <div class="md-radio has-warning">
+                          <input type="radio" id="keyword4" name="keyword1" class="md-radiobtn">
+                          <label for="keyword4">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭 </label>
+                        </div>
+</div>
+</div>
+</div>
+
+   <div class="form-group">
+                <label class="control-label col-md-2">Name</label>
+                 <div class="col-md-10" >
+
+      <input class="form-control input-circle name" type="text">
+
+  </div>
+  </div>
+    <div class="form-group">
+                <label class="control-label col-md-2"> Secondarydomain</label>
+                 <div class="col-md-10" >
+
+     <input class="form-control input-circle sd" type="text">
+
+
+  </div>
+  </div>
+      <div class="form-group">
+                <label class="control-label col-md-2">Agentnumquota</label>
+                 <div class="col-md-10" >
+
+     <input class="form-control input-circle ag" type="text">
+
+
+  </div>
+  </div>
+    <div class="form-group">
+                <label class="control-label col-md-2">Description</label>
+                 <div class="col-md-10" >
+
+      <textarea class="form-control input-circle descriptions" rows="5"></textarea>
+
+
+  </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-md-2">用户信息</label>
+  <div class="col-md-10">
+  <a href="javascript:;" class="btn btn-icon-only green" onclick="AddAllUser(this)"><i class="fa fa-plus"></i></a>
+  <a href="javascript:;" class="btn btn-icon-only purple" onclick="DelUser(this)"><i class="fa fa-times"></i></a>
+  </div>
+  </div>
+
+
+
+ <div class="form-group">
+   <div class="col-md-12 alls">
+<div class="well well-lg" id="all_result" style="display: none;"></div>
+</div>
+ </div>
+                                            </div>
+                                        </form>
+                                        <!-- END FORM-->
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+<button type="button" class="btn blue" onclick="alls()">Run</button>
+<button type="button" class="btn default" data-dismiss="modal" >Close</button>
+
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+
+
+
+<div class="modal fade bs-example-modal-lg" id="kefuorg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+
+                                          <h4>多租户</h4>
+                        </div>
+                        <div class="modal-body">
+                                <div class="portlet light ">
+
+                                    <div class="portlet-body form">
+                                        <!-- BEGIN FORM-->
+                                        <form action="#" class="form-horizontal">
+                                            <div class="form-body">
+   <div class="form-group">
+                <label class="control-label col-md-2">Tenantid</label>
+                 <div class="col-md-10" >
+
+      <input class="form-control input-circle" type="text"  id="kefuorgtid">
+
+  </div>
+  </div>
+ <div class="form-group" style="margin-top: 30px">
+  <label class="control-label col-md-2">开启/关闭</label>
+  <div class="col-md-10">
+                      <div class="md-radio-inline">
+                      <div class="md-radio has-error">
+                          <input type="radio" id="radio1" name="radio1" class="md-radiobtn" checked>
+                          <label for="radio1">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启服务 </label>
+                        </div>
+                        <div class="md-radio">
+                          <input type="radio" id="radio2" name="radio1" class="md-radiobtn">
+                          <label for="radio2">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭服务 </label>
+                        </div>
+</div>
+</div>
+</div>
+   <div class="form-group">
+                <label class="control-label col-md-2">Name</label>
+                 <div class="col-md-10" >
+
+      <input class="form-control input-circle" type="text"  id="name">
+
+  </div>
+  </div>
+    <div class="form-group">
+                <label class="control-label col-md-2"> Secondarydomain</label>
+                 <div class="col-md-10" >
+
+     <input class="form-control input-circle" type="text"  id="sd">
+
+
+  </div>
+  </div>
+      <div class="form-group">
+                <label class="control-label col-md-2">Agentnumquota</label>
+                 <div class="col-md-10" >
+
+     <input class="form-control input-circle" type="text"  id="ag">
+
+
+  </div>
+  </div>
+    <div class="form-group">
+                <label class="control-label col-md-2">Description</label>
+                 <div class="col-md-10" >
+
+      <textarea class="form-control input-circle" rows="5" id="descriptions"></textarea>
+
+
+  </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-md-2">用户信息</label>
+  <div class="col-md-10">
+  <a href="javascript:;" class="btn btn-icon-only green" onclick="AddUser(this)"><i class="fa fa-plus"></i></a>
+  <a href="javascript:;" class="btn btn-icon-only purple" onclick="DelUser(this)"><i class="fa fa-times"></i></a>
+  </div>
+  </div>
+
+
+ <div class="form-group">
+   <div class="col-md-12 kefuorg">
+<div class="well well-lg" id="kefuorg_result" style="display: none;"></div>
+</div>
+ </div>
+                                            </div>
+                                        </form>
+                                        <!-- END FORM-->
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+<button type="button" class="btn blue" onclick="kefuorgs()">Run</button>
+<button type="button" class="btn default" data-dismiss="modal" >Close</button>
+
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+
+
+<div class="modal fade bs-example-modal-lg" id="key" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+
+                                          <h4>敏感词</h4>
+                        </div>
+                        <div class="modal-body">
+                                <div class="portlet light ">
+
+                                    <div class="portlet-body form">
+                                        <!-- BEGIN FORM-->
+                                        <form action="#" class="form-horizontal">
+                                            <div class="form-body">
+   <div class="form-group">
+                <label class="control-label col-md-2">Tenantid</label>
+                 <div class="col-md-10" >
+
+      <input class="form-control input-circle" type="text"  id="keyid">
+
+  </div>
+  </div>
+
+ <div class="form-group" style="margin-top: 30px">
+  <label class="control-label col-md-2">开启/关闭</label>
+  <div class="col-md-10">
+                      <div class="md-radio-inline">
+                      <div class="md-radio has-error">
+                          <input type="radio" id="radio3" name="radio3" class="md-radiobtn" checked>
+                          <label for="radio3">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启服务 </label>
+                        </div>
+                        <div class="md-radio">
+                          <input type="radio" id="radio4" name="radio3" class="md-radiobtn">
+                          <label for="radio4">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭服务 </label>
+                        </div>
+</div>
+</div>
+</div>
+     <div class="form-group">
+                <label class="control-label col-md-2">Keywords</label>
+                 <div class="col-md-10" >
+
+     <input class="form-control input-circle" type="text"  id="kw" placeholder="Sample: 我了个去,银行卡,一个亿">
+
+
+  </div>
+  </div>
+
+     <div class="form-group">
+                <label class="control-label col-md-2">Remindcontent</label>
+                 <div class="col-md-10" >
+
+     <input class="form-control input-circle" type="text"  id="rc" placeholder="Sample: CSM提示：\n1）敏感词，为了保障您的权益，请文明用语.">
+
+
+  </div>
+  </div>
+ <div class="form-group" style="margin-top: 30px">
+  <label class="control-label col-md-2">Boublewordsflag</label>
+  <div class="col-md-10">
+                        <div class="md-radio-inline">
+                      <div class="md-radio has-success">
+                          <input type="radio" id="double1" name="double" class="md-radiobtn" checked>
+                          <label for="double1">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启 </label>
+                        </div>
+                        <div class="md-radio has-warning">
+                          <input type="radio" id="double2" name="double" class="md-radiobtn">
+                          <label for="double2">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭 </label>
+                        </div>
+</div>
+</div>
+</div>
+
+ <div class="form-group">
+  <label class="control-label col-md-2">Generalwordsflag</label>
+  <div class="col-md-10">
+                        <div class="md-radio-inline">
+                      <div class="md-radio has-success">
+                          <input type="radio" id="genera1" name="genera" class="md-radiobtn" checked>
+                          <label for="genera1">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启 </label>
+                        </div>
+                        <div class="md-radio has-warning">
+                          <input type="radio" id="genera2" name="genera" class="md-radiobtn">
+                          <label for="genera2">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭 </label>
+                        </div>
+</div>
+</div>
+</div>
+
+
+ <div class="form-group">
+  <label class="control-label col-md-2">Advancedfilterflag</label>
+  <div class="col-md-10">
+                        <div class="md-radio-inline">
+                      <div class="md-radio has-success">
+                          <input type="radio" id="advanced1" name="advanced" class="md-radiobtn" checked>
+                          <label for="advanced1">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启 </label>
+                        </div>
+                        <div class="md-radio has-warning">
+                          <input type="radio" id="advanced2" name="advanced" class="md-radiobtn">
+                          <label for="advanced2">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭 </label>
+                        </div>
+</div>
+</div>
+</div>
+
+
+ <div class="form-group">
+  <label class="control-label col-md-2">Wildcardreplaceflag</label>
+  <div class="col-md-10">
+                        <div class="md-radio-inline">
+                      <div class="md-radio has-success">
+                          <input type="radio" id="wildcard1" name="wildcard" class="md-radiobtn">
+                          <label for="wildcard1">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启 </label>
+                        </div>
+                        <div class="md-radio has-warning">
+                          <input type="radio" id="wildcard2" name="wildcard" class="md-radiobtn" checked>
+                          <label for="wildcard2">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭 </label>
+                        </div>
+</div>
+</div>
+</div>
+
+ <div class="form-group">
+  <label class="control-label col-md-2">Autoappendremind</label>
+  <div class="col-md-10">
+                        <div class="md-radio-inline">
+                      <div class="md-radio has-success">
+                          <input type="radio" id="auto1" name="auto" class="md-radiobtn" checked>
+                          <label for="auto1">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启 </label>
+                        </div>
+                        <div class="md-radio has-warning">
+                          <input type="radio" id="auto2" name="auto" class="md-radiobtn">
+                          <label for="auto2">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭 </label>
+                        </div>
+</div>
+</div>
+</div>
+
+ <div class="form-group">
+  <label class="control-label col-md-2">Keywordscanflag</label>
+  <div class="col-md-10">
+                        <div class="md-radio-inline">
+                      <div class="md-radio has-success">
+                          <input type="radio" id="keyword1" name="keyword" class="md-radiobtn" checked>
+                          <label for="keyword1">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启 </label>
+                        </div>
+                        <div class="md-radio has-warning">
+                          <input type="radio" id="keyword2" name="keyword" class="md-radiobtn">
+                          <label for="keyword2">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭 </label>
+                        </div>
+</div>
+</div>
+</div>
+
+ <div class="form-group">
+   <div class="col-md-12 key">
+<div class="well well-lg" id="key_result" style="display: none;"></div>
+</div>
+ </div>
+                                            </div>
+                                        </form>
+                                        <!-- END FORM-->
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+<button type="button" class="btn blue" onclick="keywords()">Run</button>
+<button type="button" class="btn default" data-dismiss="modal" >Close</button>
+
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+	<!-- BEGIN MAIN LAYOUT -->
+<div class="modal fade bs-example-modal-lg" id="agentcallvisitors" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+
+                                          <h4>座席主动呼叫客户</h4>
+                        </div>
+                        <div class="modal-body">
+                                <div class="portlet light ">
+
+                                    <div class="portlet-body form">
+                                        <!-- BEGIN FORM-->
+                                        <form action="#" class="form-horizontal">
+                                            <div class="form-body">
+   <div class="form-group">
+                <label class="control-label col-md-2">Tenantid</label>
+                 <div class="col-md-10" >
+
+      <input class="form-control input-circle" type="text"  id="agentcallvisitorid">
+
+  </div>
+  </div>
+    <div class="form-group">
+                <label class="control-label col-md-2">IP</label>
+                 <div class="col-md-10" >
+
+      <input class="form-control input-circle" type="text"  id="agenturl" placeholder="座席呼叫客户地址">
+
+  </div>
+  </div>
+ <div class="form-group" style="margin-top: 30px">
+  <label class="control-label col-md-2">开启/关闭</label>
+  <div class="col-md-10">
+                      <div class="md-radio-inline">
+                      <div class="md-radio has-error">
+                          <input type="radio" id="radio1" name="radio1" class="md-radiobtn" checked>
+                          <label for="radio1">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          开启服务 </label>
+                        </div>
+                        <div class="md-radio">
+                          <input type="radio" id="radio2" name="radio1" class="md-radiobtn">
+                          <label for="radio2">
+                          <span></span>
+                          <span class="check"></span>
+                          <span class="box"></span>
+                          关闭服务 </label>
+                        </div>
+</div>
+</div>
+</div>
+
+
+
+ <div class="form-group">
+   <div class="col-md-12 callvisitors">
+<div class="well well-lg" id="agentcall_result" style="display: none;"></div>
+</div>
+ </div>
+                                            </div>
+                                        </form>
+                                        <!-- END FORM-->
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+<button type="button" class="btn blue" onclick="agentcall()">Run</button>
+<button type="button" class="btn default" data-dismiss="modal" >Close</button>
+
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+
+
+	<!-- HEADER BEGIN -->
+    <header class="page-header">
+        <nav class="navbar" role="navigation">
+            <div class="container-fluid">
+                <div class="havbar-header">
+                	<!-- BEGIN LOGO -->
+                    <a id="index" class="navbar-brand" href="#">
+                     <h3 style="color: white;">自动化<span style="color: red;">旗舰版</span></h3>
+
+                    </a>
+                	<!-- END LOGO -->
+
+	                <!-- BEGIN TOPBAR ACTIONS -->
+	                <div class="topbar-actions">
+		                <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
+						<form class="search-form" action="# y" method="GET">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="TENANTID" name="query" id="td">
+								<span class="input-group-btn">
+									<a href="javascript:;" class="btn submit"><i class="fa fa-search"></i></a>
+								</span>
+							</div>
+						</form>
+
+					</div>
+	                <!-- END TOPBAR ACTIONS -->
+                </div>
+            </div>
+            <!--/container-->
+        </nav>
+    </header>
+	<!-- HEADER END -->
+
+	<!-- PAGE CONTENT BEGIN -->
+
+    <div class="page-content" >
+    	<div class="container">
+    		<!-- Center Wrap BEGIN -->
+    		<div class="center-wrap" style="height: 1200px">
+    			<div class="center-align">
+    				<div class="center-body">
+                 <div class="row">
+                <div class="col-sm-12 margin-bottom-30">
+                  <a class="webapp-btn" data-toggle="modal" data-target="#all">
+                    <h3> ALL FUNCTION</h3>
+                    <p>开通所有功能</p>
+                  </a>
+                </div>
+            </div>
+			    		<div class="row">
+
+                 <div class="col-sm-6 margin-bottom-30">
+                  <a class="webapp-btn" data-toggle="modal" data-target="#portlet" onmouseover="change('robotOptimization')">
+                    <h3> robot</h3>
+                    <p>机器人知识问答库优化</p>
+                  </a>
+                </div>
+                <div class="col-sm-6 margin-bottom-30">
+                  <a class="webapp-btn" data-toggle="modal" data-target="#portlet" onmouseover="change('questiontransfer')">
+                    <h3>Transfer</h3>
+                    <p>推荐问题的转人工按钮</p>
+                  </a>
+                </div>
+</div>
+<div class="row">
+			    			<div class="col-sm-6 margin-bottom-30">
+			    				<a class="webapp-btn" href="#" data-toggle="modal" data-target="#portlet" onmouseover="change('recommand')">
+			    					<h3>Recommand</h3>
+			    					<p>智能人机协作</p>
+			    				</a>
+			    			</div>
+			    			<div class="col-sm-6 margin-bottom-30">
+			    				<a class="webapp-btn" data-toggle="modal" data-target="#portlet" onmouseover="change('sentiment')">
+			    					<h3>SENTIMENT</h3>
+			    					<p>智能质检</p>
+			    				</a>
+			    			</div>
+			    		</div>
+			    		<div class="row">
+			    			<div class="col-sm-6 margin-bottom-30">
+			    				<a class="webapp-btn" data-toggle="modal" data-target="#portlet" onmouseover="change('growingio')">
+			    					<h3>GROWINGIO</h3>
+			    					<p>访客轨迹分析 && 网站访客统计</p>
+			    				</a>
+			    			</div>
+			    			<div class="col-sm-6 margin-bottom-30">
+			    				<a class="webapp-btn" data-toggle="modal" data-target="#portlet" onmouseover="change('callback')">
+			    					<h3>CALLBACK</h3>
+			    					<p>自定义事件推送</p>
+			    				</a>
+			    			</div>
+			    		</div>
+	<div class="row">
+			    			<div class="col-sm-6 margin-bottom-30">
+			    				<a class="webapp-btn" data-toggle="modal" data-target="#portlet" onmouseover="change('robot')">
+			    					<h3>ROBOTMULTI</h3>
+			    					<p>开通多机器人</p>
+			    				</a>
+			    			</div>
+			    			<div class="col-sm-6 margin-bottom-30">
+			    				<a class="webapp-btn" data-toggle="modal" data-target="#kefuorg">
+			    					<h3>KEFUORG</h3>
+			    					<p>多租户</p>
+			    				</a>
+			    			</div>
+			    		</div>
+	<div class="row">
+			    			<div class="col-sm-6 margin-bottom-30"  data-toggle="modal" data-target="#key">
+			    				<a class="webapp-btn">
+			    					<h3>KEYWORDSCAN</h3>
+			    					<p>敏感词</p>
+			    				</a>
+			    			</div>
+			    			<div class="col-sm-6 margin-bottom-30">
+			    				<a class="webapp-btn" data-toggle="modal" data-target="#portlet" onmouseover="change('voice')">
+			    					<h3>VOICE</h3>
+			    					<p>客户之声</p>
+			    				</a>
+			    			</div>
+			    		</div>
+
+  <div class="row">
+                <div class="col-sm-6 margin-bottom-30">
+                  <a class="webapp-btn" data-toggle="modal" data-target="#portlet" onmouseover="change('msgpredict')">
+                    <h3>msgPredict</h3>
+                    <p>开通消息预知功能</p>
+                  </a>
+                </div>
+                <div class="col-sm-6 margin-bottom-30">
+                  <a class="webapp-btn" data-toggle="modal" data-target="#agentcallvisitors">
+                    <h3>CallVisitor</h3>
+                    <p>座席主动呼叫客户</p>
+                  </a>
+                </div>
+              </div>
+
+
+					</div>
+				</div>
+<p class="copyright">2016 © Easemob.
+	 			<a href="#">旗舰版</a>
+	 		</p>
+			</div>
+    		<!-- Center Wrap END -->
+
+    		<!-- BEGIN QUICK SIDEBAR TOGGLER -->
+
+            <!-- END QUICK SIDEBAR TOGGLER -->
+
+    		<!-- BEGIN QUICK SIDEBAR -->
+
+			<!-- END QUICK SIDEBAR -->
+
+			<!-- Copyright BEGIN -->
+
+			<!-- Copyright END -->
+    	</div>
+    </div>
+	<!-- PAGE CONTENT END -->
+    <!-- END MAIN LAYOUT -->
+
+
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script>
+<![endif]-->
+<script src="/static/v4.1.0/theme/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="/static/v4.1.0/theme/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="/static/v4.1.0/theme/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/static/v4.1.0/theme/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="/static/v4.1.0/theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="/static/v4.1.0/theme/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="/static/v4.1.0/theme/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="/static/v4.1.0/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+
+<script src="/static/v4.1.0/theme/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="/static/v4.1.0/theme/assets/admin/layout6/scripts/layout.js" type="text/javascript"></script>
+<script src="/static/v4.1.0/theme/assets/admin/layout6/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="/static/js/main.js"></script>
+
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function() {
+   	Metronic.init(); // init metronic core componets
+   	Layout.init(); // init layout
+    QuickSidebar.init(); // init quick sidebar
+});
+</script>
+
+<script type="text/javascript">
+var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }}
+</script>
+<!-- END JAVASCRIPTS -->
+
+</body>
+
+<!-- END BODY -->
+</html>

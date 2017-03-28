@@ -1,0 +1,96 @@
+#! /bin/bash
+#
+# description: ultimate
+# path: /data/htdocs/ultimate/app/
+# config: config.xml
+# version: 1.0.1
+# author: WangYanJie
+# Date: 2016-12-20
+### END INFO
+
+#Source function library.
+. /etc/rc.d/init.d/functions
+
+PATH="/data/htdocs/ultimate"
+
+COMMAND="/data/htdocs/ultimate/flask/bin/python"
+
+GUN="/data/htdocs/ultimate/flask/bin/gunicorn"
+
+APP="manage:app"
+
+PORT=6666
+
+HOST="127.0.0.1"
+
+PROCESS=30
+
+RETVAL=0
+
+TIMEOUT=600
+
+start(){
+
+/bin/ps aux|/bin/grep /data/htdocs/ultimate/flask/bin/gunicorn|/bin/grep -v grep >/dev/null 2>&1
+
+if [ $? -eq 0 ];then
+echo -n "MONITOR IS RUNNING.."
+exit 1
+fi
+
+echo -n "STARTING MONITOR ..."
+cd $PATH
+${COMMAND} ${GUN} -w ${PROCESS} -t ${TIMEOUT} -b${HOST}:${PORT} ${APP}
+
+if [ $? -eq 0 ];then
+echo -n "RUN SUCCESS"
+RETVAL=0
+else
+echo -n "RUN FAUILER"
+RETVAL=4
+fi
+return $RETVAL
+}
+
+stop(){
+/bin/ps aux|/bin/grep "/data/htdocs/ultimate/flask/bin/gunicorn"|/bin/grep -v grep|/bin/awk '{print $2}'|/bin/xargs /bin/kill -9
+if [ $? -eq 0 ];then
+echo -n "STOP SUCCESS"
+RETVAL=0
+else
+echo -n "STOP FAUILER"
+RETVAL=3
+fi
+return $RETVAL
+}
+
+status(){
+/bin/ps aux|/bin/grep "/data/htdocs/ultimate/flask/bin/gunicorn"|/bin/grep -v grep >/dev/null 2>&1
+if [ $? -eq 0 ];then
+echo -n "RUNNING"
+else
+echo -n "PID IS EMPTY"
+fi
+}
+
+case "$1" in  
+start)  
+start  
+;;  
+stop)  
+stop  
+;;  
+restart)  
+         
+sh $0 stop  
+sh $0 start  
+;;
+status)
+status
+;; 
+*)  
+echo " error!"  
+        echo "Usage: $0 {start|stop|restart}"  
+        exit 1  
+        ;;  
+esac

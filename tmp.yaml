@@ -1,0 +1,15 @@
+functions:
+  kefuorg:
+    agentnumquota: 400
+    description: !!python/str '央广购物（CNRmall）系中央人民广播电台倾力打造的专业居家购物公司，是以电视购物频道为主体，辅助以广播、网络、手机app、型录等全通路电子商务平台。2009年6月，经由国家广电总局审批，获得全国电视网络落地覆盖牌照'
+    enable: true
+    name: yangguanggouwu
+    secondarydomain: yangguanggouwu.kefu.easemob.com
+    tenantids:
+    - 31340
+    users:
+    - nicename: liweiwei
+      passwd: Yang12345
+      phone: '18601190115'
+      username: liweiwei@cnrmall.com
+tenantids: []
