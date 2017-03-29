@@ -412,8 +412,8 @@ Quick Sidebar Layout
   right: 0;
 }
 
-/*** 
-Quick Sidebar Toggler 
+/***
+Quick Sidebar Toggler
 ***/
 .page-quick-sidebar-toggler {
   overflow: hidden;
@@ -743,8 +743,8 @@ Quick Sidebar Layout
   background: #21282e;
 }
 
-/*** 
-Quick Sidebar Toggler 
+/***
+Quick Sidebar Toggler
 ***/
 .page-quick-sidebar-toggler {
   background: #36424c;
@@ -932,7 +932,7 @@ html {
     top: 0;
     left: 0;
     right: 0;
-    width: 700px;
+    width: 1200px;
     height: 100%;
     margin: 0 auto;
     display: block;
