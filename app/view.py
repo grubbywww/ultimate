@@ -16,6 +16,37 @@ sys.setdefaultencoding('utf8')
 @app.route('/main',methods = ['GET','POST'])
 def main():
     return render_template("main.html",title = "自动化--旗舰版")
+@app.route('/waitlist',methods = ['POST'])
+def waitlist():
+    tenantids = request.values.get('tenantids')
+    total = request.values.get('total')
+    if total == "":
+        totalids = []
+    else:
+        totalid =  re.split("[,|\s+]",total)
+        totalids = [int(i) for i in totalid]
+    enable = request.values.get('enable')
+    if enable == "":
+        tag = ""
+    else:
+        tag = True
+    if tenantids.strip() == "":
+        tenantid = []
+    else:
+        td = re.split("[,|\s+]",tenantids)
+        tenantid = [int(i) for i in td]
+    dataMap = {
+    "tenantids":list(totalids),
+    "functions":{
+    "waitlistnumber":{
+    "enable":bool(tag),
+    "tenantids":list(tenantid)
+    }
+    }
+    }
+    WriteYaml(dataMap)
+    results = RunYaml()
+    return jsonify(result = results)
 @app.route('/msgrecall',methods = ['POST'])
 def msgrecall():
     tenantids = request.values.get('tenantids')
@@ -662,6 +693,11 @@ def all():
     "url": str(url),
     },
     "msgrecall":{
+    "enable":bool(tag),
+    "tenantids":list(tenantid),
+    "url": str(url),
+    },
+    "waitlistnumber":{
     "enable":bool(tag),
     "tenantids":list(tenantid),
     "url": str(url),

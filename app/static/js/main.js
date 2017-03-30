@@ -47,6 +47,9 @@ function change(da){
     }else if(da=="msgrecall"){
         title="消息撤回";
           $("#portlet").find(".modal-footer").html('<button type="button" class="btn blue" onclick="msgrecalls()">Run</button>  <button type="button" class="btn default" data-dismiss="modal" >Close</button>');
+    }else if(da=="waitlist"){
+        title="消息撤回";
+          $("#portlet").find(".modal-footer").html('<button type="button" class="btn blue" onclick="waitlists()">Run</button>  <button type="button" class="btn default" data-dismiss="modal" >Close</button>');
     }else if(da=="robotOptimization"){
         title="机器人知识问答库优化";
           $("#portlet").find(".modal-footer").html('<button type="button" class="btn blue" onclick="robotOptimization()">Run</button>  <button type="button" class="btn default" data-dismiss="modal" >Close</button>');
@@ -111,6 +114,36 @@ action="";
         });
 
 }
+
+function waitlists(){
+tenantid = $("#recom").val();
+total = $("#td").val();
+if (tenantid=="" && total==""){
+    alert("tenantid不能为空");
+    return false;
+}
+
+ if($("#radio53").attr("checked")=="checked"){
+
+action="true";
+}else{
+action="";
+}
+    $(".recommand").html("<img src='/static/images/ajax_loader3.gif'>");
+    $.post($SCRIPT_ROOT + '/waitlist', {
+            total: $("#td").val(),
+            tenantids: tenantid,
+            enable: action,
+            now: new Date().getTime()
+        },
+        function(data) {
+            $(".recommand").html('<div class="well well-lg" id="recommand_result" style="display: none;"></div>')
+            $("#recommand_result").show(500);
+            $("#recommand_result").html('<p style="line-height:30px">'+data.result+'</p>');
+        });
+
+}
+
 function recommandtion(){
 tenantid = $("#recom").val();
 total = $("#td").val();
