@@ -52,7 +52,7 @@ function change(da){
           $("#portlet").find(".modal-footer").html('<button type="button" class="btn blue" onclick="waitlists()">Run</button>  <button type="button" class="btn default" data-dismiss="modal" >Close</button>');
     }else if(da=="audiovideo"){
         title="音响视频";
-          $("#portlet").find(".modal-footer").html('<button type="button" class="btn blue" onclick="audiovideos()">Run</button>  <button type="button" class="btn default" data-dismiss="modal" >Close</button>');
+     $("#portlet").find(".modal-footer").html('<button type="button" class="btn blue" onclick="audio()">Run</button>  <button type="button" class="btn default" data-dismiss="modal" >Close</button>');
     }else if(da=="robotOptimization"){
         title="机器人知识问答库优化";
           $("#portlet").find(".modal-footer").html('<button type="button" class="btn blue" onclick="robotOptimization()">Run</button>  <button type="button" class="btn default" data-dismiss="modal" >Close</button>');
@@ -147,7 +147,7 @@ action="";
 
 }
 
-function audiovideos(){
+function audio(){
 tenantid = $("#recom").val();
 total = $("#td").val();
 if (tenantid=="" && total==""){
