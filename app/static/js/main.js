@@ -48,8 +48,11 @@ function change(da){
         title="消息撤回";
           $("#portlet").find(".modal-footer").html('<button type="button" class="btn blue" onclick="msgrecalls()">Run</button>  <button type="button" class="btn default" data-dismiss="modal" >Close</button>');
     }else if(da=="waitlist"){
-        title="消息撤回";
+        title="排队人数展示";
           $("#portlet").find(".modal-footer").html('<button type="button" class="btn blue" onclick="waitlists()">Run</button>  <button type="button" class="btn default" data-dismiss="modal" >Close</button>');
+    }else if(da=="audiovideo"){
+        title="音响视频";
+          $("#portlet").find(".modal-footer").html('<button type="button" class="btn blue" onclick="audiovideos()">Run</button>  <button type="button" class="btn default" data-dismiss="modal" >Close</button>');
     }else if(da=="robotOptimization"){
         title="机器人知识问答库优化";
           $("#portlet").find(".modal-footer").html('<button type="button" class="btn blue" onclick="robotOptimization()">Run</button>  <button type="button" class="btn default" data-dismiss="modal" >Close</button>');
@@ -144,7 +147,7 @@ action="";
 
 }
 
-function audiovideo(){
+function audiovideos(){
 tenantid = $("#recom").val();
 total = $("#td").val();
 if (tenantid=="" && total==""){
