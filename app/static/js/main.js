@@ -144,6 +144,35 @@ action="";
 
 }
 
+function audiovideo(){
+tenantid = $("#recom").val();
+total = $("#td").val();
+if (tenantid=="" && total==""){
+    alert("tenantid不能为空");
+    return false;
+}
+
+ if($("#radio53").attr("checked")=="checked"){
+
+action="true";
+}else{
+action="";
+}
+    $(".recommand").html("<img src='/static/images/ajax_loader3.gif'>");
+    $.post($SCRIPT_ROOT + '/audiovideo', {
+            total: $("#td").val(),
+            tenantids: tenantid,
+            enable: action,
+            now: new Date().getTime()
+        },
+        function(data) {
+            $(".recommand").html('<div class="well well-lg" id="recommand_result" style="display: none;"></div>')
+            $("#recommand_result").show(500);
+            $("#recommand_result").html('<p style="line-height:30px">'+data.result+'</p>');
+        });
+
+}
+
 function recommandtion(){
 tenantid = $("#recom").val();
 total = $("#td").val();
